@@ -1,0 +1,11 @@
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+    
+}
+
+.header-content .home {
+    padding-right:2rem;
+}

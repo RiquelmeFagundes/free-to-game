@@ -5,6 +5,8 @@ import GameCard from "./GameCard";
 export default function Home() {
   const [games, setGames] = useState([]);
   const [carregando, setCarregando] = useState(true);
+  const [busca, setBusca] = useState("");
+  const [quantidadeVisivel, setQuantidadeVisivel] = useState(12);
 
   useEffect(() => {
     async function buscarGames() {
@@ -13,7 +15,7 @@ export default function Home() {
 
         if (!response.ok) throw new Error(`Erro ${response.status}`);
         const dados = await response.json();
-        setGames(dados.slice(0, 3));
+        setGames(dados);
       } catch (error) {
         console.error("Erro ao buscar jogos:", error);
       } finally {
@@ -23,7 +25,19 @@ export default function Home() {
     buscarGames();
   }, []);
 
-  const [busca, setBusca] = useState("");
+  useEffect(() => {
+    function handleScroll() {
+      const chegouPertoDoFim =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 300;
+
+      if (chegouPertoDoFim) {
+        setQuantidadeVisivel((atual) => atual + 12);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   function handleSearchChange(evento) {
     setBusca(evento.target.value);
@@ -33,15 +47,17 @@ export default function Home() {
     g.title.toLowerCase().includes(busca.toLowerCase()),
   );
 
+  const gamesExibidos = gamesFiltrados.slice(0, quantidadeVisivel);
+
   return (
     <div className="container-layout">
       <input type="text" value={busca} onChange={handleSearchChange} />
       <div className="principal">
-        <h2>Trending games</h2>
+        <h2>Catálogo</h2>
         {carregando ? (
           <p>Carregando jogos...</p>
-        ) : gamesFiltrados.length > 0 ? (
-          gamesFiltrados.map((game) => (
+        ) : gamesExibidos.length > 0 ? (
+          gamesExibidos.map((game) => (
             <GameCard key={game.id} detalhes={game} />
           ))
         ) : (
