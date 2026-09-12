@@ -9,7 +9,7 @@ export default function Home() {
     async function buscarGames() {
       const response = await fetch("https://www.freetogame.com/api/games");
       const dados = await response.json();
-      setGames(dados);
+      setGames(dados.slice(0, 12));
     }
     buscarGames();
   }, []);
