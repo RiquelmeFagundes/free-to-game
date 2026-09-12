@@ -13,6 +13,6 @@ export default function App() {
           <Route path="game/:id" element={<DetalhesGames />}></Route>
         </Route>
       </Routes>
-    </div>
+    </div> 
   );
 }

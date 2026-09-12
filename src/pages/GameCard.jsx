@@ -13,9 +13,9 @@ export default function GameCard({ game }) {
           <span>{game.genre}</span>
           <span>{game.platform}</span>
         </div>
-        <Link to={`/item/${game.id}`}>
-          <button className="button-detalhes">Ver Detalhes</button>
-        </Link>
+      <Link to={`/game/${game.id}`}>
+        <button className="button-detalhes">Ver Detalhes</button>
+      </Link>
       </div>
     </div>
   );

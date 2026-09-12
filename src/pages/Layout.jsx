@@ -7,7 +7,7 @@ export default function Layout() {
     <div>
       <header>
         <div className="header-content">
-          <h1>Globe</h1>
+          <h1>API de Jogos</h1>
           <nav>
             <NavLink className="home" to="/">
               Home
@@ -19,7 +19,7 @@ export default function Layout() {
       <Outlet />
 
       <footer>
-        <p>© Todos os direitos reservados | 2026 - Globe</p>
+        <p>© Todos os direitos reservados | 2026 - API de Jogos</p>
       </footer>
     </div>
   );
