@@ -1,0 +1,9 @@
+.game-card {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.game-card-grid {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}

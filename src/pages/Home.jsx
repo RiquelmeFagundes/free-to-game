@@ -109,6 +109,7 @@ export default function Home() {
       <div className="principal">
         <h2>Catálogo de jogos grátis para PC em 2026! </h2>
         <p>416 jogos para jogar grátis encontrados na nossa lista!</p>
+        <div className="grid-colunas">
         {carregando ? (
           <p>Carregando jogos...</p>
         ) : gamesExibidos.length > 0 ? (
@@ -118,6 +119,7 @@ export default function Home() {
         ) : (
           <p>Nenhum jogo encontrado.</p>
         )}
+        </div>
       </div>
     </div>
   );
