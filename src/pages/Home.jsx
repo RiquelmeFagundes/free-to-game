@@ -6,18 +6,23 @@ export default function Home() {
   const [games, setGames] = useState([]);
   const [carregando, setCarregando] = useState(true);
 
-async function buscarGames() {
-  try {
-    const response = await fetch("/api/games?sort-by=popularity");
-    if (!response.ok) throw new Error(`Erro ${response.status}`);
-    const dados = await response.json();
-    setGames(dados.slice(0, 6));
-  } catch (error) {
-    console.error("Erro ao buscar jogos:", error);
-  } finally {
-    setCarregando(false);
-  }
-}
+  useEffect(() => {
+    async function buscarGames() {
+      try {
+        const response = await fetch("/api/games?sort-by=popularity");
+
+        if (!response.ok) throw new Error(`Erro ${response.status}`);
+        const dados = await response.json();
+        setGames(dados.slice(0, 6));
+      } catch (error) {
+        console.error("Erro ao buscar jogos:", error);
+      } finally {
+        setCarregando(false);
+      }
+    }
+    buscarGames();
+  }, []);
+
   const [busca, setBusca] = useState("");
 
   function handleSearchChange(evento) {

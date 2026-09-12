@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function GameCard({ game }) {
+export default function GameCard({ detalhes}) {
   return (
     <div className="game-card">
 
-      <Link to={`/game/${game.id}`}>
-      <img src={game.thumbnail} alt={`Capa do jogo ${game.title}`} />
+      <Link to={`/game/${detalhes.id}`}>
+      <img src={detalhes.thumbnail} alt={`Capa do jogo ${detalhes.title}`} />
       </Link>
       <div className="card-content">
-        <h3>{game.title}</h3>
+        <h3>{detalhes.title}</h3>
 
         <div className="tags">
-          <span>{game.genre}</span>
-          <span>{game.platform}</span>
+          <span>{detalhes.genre}</span>
+          <span>{detalhes.platform}</span>
         </div>
       </div>
     </div>
