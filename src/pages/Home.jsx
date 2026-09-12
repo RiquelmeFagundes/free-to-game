@@ -13,7 +13,7 @@ export default function Home() {
 
         if (!response.ok) throw new Error(`Erro ${response.status}`);
         const dados = await response.json();
-        setGames(dados.slice(0, 6));
+        setGames(dados.slice(0, 3));
       } catch (error) {
         console.error("Erro ao buscar jogos:", error);
       } finally {
@@ -37,6 +37,7 @@ export default function Home() {
     <div className="container-layout">
       <input type="text" value={busca} onChange={handleSearchChange} />
       <div className="principal">
+        <h2>Trending games</h2>
         {carregando ? (
           <p>Carregando jogos...</p>
         ) : gamesFiltrados.length > 0 ? (

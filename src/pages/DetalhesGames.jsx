@@ -33,7 +33,7 @@ export default function DetalhesGames() {
       <p>{jogo.description}</p>
       <p>Desenvolvedora: {jogo.developer}</p>
       <Link to="/">
-        <button className="btn-pixelado">Voltar para a Home</button>
+        <button className="button-detalhe">Voltar para a Home</button>
       </Link>
     </div>
   );
