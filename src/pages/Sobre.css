@@ -41,3 +41,13 @@
 .button-sobre:hover {
   background-color: #3685d6;
 }
+
+@media (max-width: 768px) {
+  .sobre-container {
+    padding: 80px 16px 16px 16px;
+  }
+
+  .sobre-container h2 {
+    font-size: 26px;
+  }
+}

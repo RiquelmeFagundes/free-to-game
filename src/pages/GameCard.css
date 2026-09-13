@@ -65,3 +65,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media (max-width: 768px) {
+  .game-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .game-card-link {
+    height: 200px;
+  }
+}

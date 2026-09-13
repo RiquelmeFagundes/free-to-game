@@ -58,3 +58,21 @@ body {
   gap: 20px;
   margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+  .grid-colunas {
+    grid-template-columns: 1fr; 
+    justify-items: center;
+  }
+  
+  .filtros {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .filtros input,
+  .filtros select {
+    width: 100%;
+  }
+}
