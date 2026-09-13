@@ -5,6 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.all-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 .header-content {
 
   position: fixed;
@@ -52,11 +58,15 @@
   padding-right: 2rem;
 }
 
+.main-content {
+    flex: 1;
+}
+
 footer {
   background-color: #1c1e22;
   text-align: center;
   padding: 40px 20px;
-  margin-top: 80px;
+  
   width: 100%;
 }
 
@@ -66,14 +76,3 @@ footer p {
   margin: 0;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.container-layout,
-.detalhes-container,
-.sobre-container {
-  flex: 1;
-}

@@ -21,10 +21,10 @@ export default function Layout() {
         </div>
       </header>
 
-      <main>
+      <main className="main-content">
         <Outlet />
       </main>
-      
+
       <footer>
         <p>© Todos os direitos reservados | 2026 - API de Jogos</p>
       </footer>
