@@ -1,9 +1,67 @@
 .game-card {
-  border-radius: 8px;
+  background-color: #2b2d32;
+  border-radius: 6px;
   overflow: hidden;
+  width: 100%;
+  max-width: 320px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
 }
 
 .game-card-grid {
   display: grid;
   grid-template-rows: auto 1fr;
+}
+
+.game-card {
+  background-color: #2b2d32;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 320px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  transition: 0.5s ease-in-out;
+}
+
+.game-card-link {
+  display: block;
+  text-decoration: none;
+  height: 160px;
+  overflow: hidden;
+}
+
+.game-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.game-title {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  color: #e5e5e5;
+}
+
+.game-description {
+  font-size: 0.85rem;
+  color: #8c929a;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -1,14 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { NavLink, Link } from "react-router-dom";
-import "./Layout.css" 
+import "./Layout.css";
 
 export default function Layout() {
   return (
     <div className="all-content">
       <header>
         <div className="header-content">
-          <h1>API de Jogos</h1>
+          <h1>Free-to-Game</h1>
           <nav>
             <NavLink className="home" to="/">
               Home
@@ -21,8 +21,10 @@ export default function Layout() {
         </div>
       </header>
 
-      <Outlet />
-
+      <main>
+        <Outlet />
+      </main>
+      
       <footer>
         <p>© Todos os direitos reservados | 2026 - API de Jogos</p>
       </footer>

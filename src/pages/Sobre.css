@@ -1,0 +1,43 @@
+.sobre-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 24px 24px 24px;
+  font-family: Arial, sans-serif;
+  color: #aaaaaa;
+}
+
+.sobre-container h2 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #32373d;
+  padding-bottom: 10px;
+}
+
+.sobre-container p {
+  color: #7a8288;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 800px; 
+}
+
+.button-sobre {
+  background-color: #4799eb;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.button-sobre:hover {
+  background-color: #3685d6;
+}

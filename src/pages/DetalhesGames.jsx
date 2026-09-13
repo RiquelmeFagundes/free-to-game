@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import "./DetalhesGames.css";
 
 export default function DetalhesGames() {
   const { id } = useParams();
@@ -28,13 +29,24 @@ export default function DetalhesGames() {
 
   return (
     <div className="detalhes-container">
-      <h1>{jogo.title}</h1>
-      <img src={jogo.thumbnail} alt={jogo.title} />
-      <p>{jogo.description}</p>
-      <p>Desenvolvedora: {jogo.developer}</p>
-      <Link to="/">
-        <button className="button-detalhe">Voltar para a Home</button>
-      </Link>
+      <div className="detalhes-conteudo">
+        <div className="detalhes-esquerda">
+          <img src={jogo.thumbnail} alt={jogo.title} />
+          <Link to="/">
+            <button className="button-detalhe">Voltar para a Home</button>
+          </Link>
+        </div>
+
+        <div className="detalhes-direita">
+          <h1>{jogo.title}</h1>
+          <p>
+            <strong>Desenvolvedora:</strong> {jogo.developer}
+          </p>
+          <br />
+          <h3 className="titulo-sobre">About {jogo.title}</h3>
+          <p>{jogo.description}</p>
+        </div>
+      </div>
     </div>
   );
 }
