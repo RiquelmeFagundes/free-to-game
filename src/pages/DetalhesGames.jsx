@@ -10,7 +10,9 @@ export default function DetalhesGames() {
   useEffect(() => {
     async function buscarDetalhes() {
       try {
-        const response = await fetch(`/api/game?id=${id}`);
+        const response = await fetch(
+          `https://www.freetogame.com/api/games?id=${id}`,
+        );
 
         if (!response.ok) throw new Error(`Erro ${response.status}`);
         const dados = await response.json();
