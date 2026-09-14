@@ -11,7 +11,7 @@ export default function DetalhesGames() {
     async function buscarDetalhes() {
       try {
         const response = await fetch(
-          `https://www.freetogame.com/api/games?id=${id}`,
+          `https://www.freetogame.com/api/game?id=${id}`,
         );
 
         if (!response.ok) throw new Error(`Erro ${response.status}`);
