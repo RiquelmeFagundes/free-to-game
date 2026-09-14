@@ -39,7 +39,9 @@ export default function Home() {
         if (genero) params.set("category", genero);
         params.set("sort-by", ordenacao);
 
-        const response = await fetch(`/api/games?${params.toString()}`);
+        const response = await fetch(
+          `https://www.freetogame.com/api/games?${params.toString()}`,
+        );
 
         if (!response.ok) throw new Error(`Erro ${response.status}`);
         const dados = await response.json();
